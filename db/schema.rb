@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_22_104638) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_29_063732) do
   create_table "products", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.decimal "price", precision: 10
@@ -25,6 +25,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_22_104638) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
+    t.string "remember_digest"
   end
 
 end
