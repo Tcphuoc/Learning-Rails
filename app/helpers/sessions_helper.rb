@@ -6,7 +6,7 @@ module SessionsHelper
   def remember(user)
     user.remember
     cookies.permanent.encrypted[:user_id] = user.id
-    cookies.encrypted[:remember_token] = {value: user.remember_token, expires: 1.weeks.from_now.utc}
+    cookies[:remember_token] = {value: user.remember_token, expires: 1.weeks.from_now.utc}
   end
 
   def current_user
@@ -14,7 +14,7 @@ module SessionsHelper
       @current_user ||= User.find_by(id: session[:user_id])
     elsif user_id = cookies.encrypted[:user_id].to_i
       user = User.find_by(id: user_id)
-      if user && user.authenticated?(cookies.encrypted[:remember_token])
+      if user && user.authenticated?(:remember, cookies[:remember_token])
         log_in(user)
         @current_user = user
       end
