@@ -139,6 +139,15 @@ input, textarea, select, .uneditable-input {
   @include box_sizing;
 }
 
+input{
+  margin-top: 5px;
+  margin-bottom: 50px;
+}
+
+#session_remember_me {
+  width: auto;
+}
+
 #error_explanation {
   color: red;
   ul {
