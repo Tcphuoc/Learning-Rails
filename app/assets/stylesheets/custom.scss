@@ -5,6 +5,7 @@
 $background: #e9ecef;
 $white: #fff;
 $black: #000;
+$gray-light: #ced4da;
 
 /* Universal */
 body {
@@ -96,6 +97,13 @@ footer{
   }
 }
 
+@media (max-width: 800px) {
+  footer p {
+    display: block;
+    float: none;
+  }
+}
+
 /* Sidebar */
 aside {
   section.user_info {
@@ -162,4 +170,14 @@ input{
     color: $state-danger-text;
   }
 }
-  
+
+/* Users index */
+.user-list{
+  list-style: none;
+  margin: 0;
+  li{
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-light;
+  }
+}
