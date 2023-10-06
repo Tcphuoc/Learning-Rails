@@ -1,0 +1,26 @@
+= provide(:title, 'Edit user')
+h1 Update your profile
+.row 
+  .col-md-6.col-md-offset-3
+    = form_with(model: @user, local: true) do |f|
+      = render 'shared/error_messages', user: @user
+
+      = f.label :name
+      .form_control = f.text_field :name
+
+      = f.label :email
+      .form_control = f.email_field :email
+
+      = f.label :password
+      .form_control = f.password_field :password
+
+      = f.label :password_confirmation, 'Confirmation'
+      .form_control = f.password_field :password_confirmation
+
+      = f.submit 'Save changes'
+    end
+    .gravatar_edit 
+      = gravatar_for @user
+      a href="https://gravatar.com/emails" target="_blank"
+        | change
+        
