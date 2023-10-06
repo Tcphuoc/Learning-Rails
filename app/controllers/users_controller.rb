@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   before_action :find_user, only: [:show, :edit, :update, :destroy]
 
   def index
-    @users = User.all.page(params[:page])
+    @users = User.where(activated: true).page(params[:page])
   end
 
   def new
