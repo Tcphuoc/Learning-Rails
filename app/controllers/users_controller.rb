@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :logged_in_user, only: [:edit, :index, :update, :show, :destroy]
   before_action :correct_user, only: [:edit, :update, :show]
   before_action :admin_user, only: :destroy
+  before_action :find_user, only: [:show, :edit, :update, :destroy]
 
   def index
     @users = User.all.page(params[:page])
@@ -12,7 +13,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
   end
 
   def create
@@ -28,7 +28,6 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
   end
 
   def update
@@ -42,12 +41,16 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    User.find(params[:id]).destroy
+    find_user.destroy
     flash[:success] = "User deleted"
     redirect_to users_url
   end
 
   private
+
+  def find_user
+    @user = User.find(params[:id])
+  end
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
