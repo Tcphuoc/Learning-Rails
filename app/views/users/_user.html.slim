@@ -4,4 +4,3 @@ li
   - if current_user.admin? && !current_user?(user)
     = button_to "delete", user, method: :delete, data: { confirm: "You sure?" }
   end
-  

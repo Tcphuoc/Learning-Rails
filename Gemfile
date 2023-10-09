@@ -55,6 +55,8 @@ gem "turbo-rails"
 gem "faker"
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
+gem 'letter_opener'
+gem 'letter_opener_web'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
