@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :products
   resources :users
   resources :account_activations, only: [:edit]
+  resources :password_resets, only: [:new, :edit, :create, :update]
 
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 end
