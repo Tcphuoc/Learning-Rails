@@ -1,0 +1,5 @@
+- if @feed_items.any?
+  ol.microposts
+    = render @feed_items
+  = paginate @feed_items, theme: 'twitter-bootstrap-3', params: { controller: :pages, action: :home}
+end 
