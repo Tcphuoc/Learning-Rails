@@ -140,6 +140,42 @@ aside {
   margin-top: 15px;
 }
 
+.stats{
+  overflow: auto;
+  margin-top: 0;
+  padding: 0;
+  a{
+    float: left;
+    text-decoration: none;
+    padding-right: 10px;
+    margin-right: 10px;
+    color: gray;
+    &:first-child{
+      border-right: 1px solid gray;
+    }
+    &:hover{
+      text-decoration: none;
+    }
+  }
+  strong{
+    display: block;
+  }
+}
+
+.user_avatars{
+  a{
+    margin: 5px 0;
+    padding: 0;
+    &:first-child {
+      border: none;
+    }
+  }
+}
+
+#follow_form{
+  padding: 10px 0;
+}
+
 /* Form */
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
