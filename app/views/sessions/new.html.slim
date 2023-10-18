@@ -13,7 +13,7 @@ h1 Log in
         = f.check_box :remember_me
         span Remember me on this computer
 
-      = f.submit "Log in"
+      .btn.btn-primary = f.submit "Log in"
     end
 
     p New user? #{link_to "Sign up now!", signup_path}
